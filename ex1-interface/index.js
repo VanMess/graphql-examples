@@ -4,19 +4,35 @@ import schemaDefinition from './scheme.gql';
 
 const resolvers = {
   NamedEntity: {
-    __resolveType() {
-      return 'User';
+    __resolveType(p) {
+      return !!p.age ? 'User' : 'Administrator';
     }
   },
   Query: {
-    users() {
+    profiles() {
       return [
-        { id: 1, name: "foo", age: 1 },
-        { id: 2, name: 'bar', age: 1 }
+        { id: 1, name: "foo", age: 25 },
+        { id: 2, name: 'bar', age: 24 },
+        { id: 3, name: "foo" }
       ];
     }
   }
 };
+
+/**
+ * 
+ * 查询实例： 
+ * 
+ * {
+    profiles {
+      name
+      ... on User {
+        age
+      }
+    } 
+  }
+ * 
+ */
 
 const server = new ApolloServer({
   typeDefs: schemaDefinition,

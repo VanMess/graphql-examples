@@ -5,12 +5,21 @@ interface NamedEntity {
   name: String
 }
 
-type User implements NamedEntity {
+interface Node {
+  id: ID!
+}
+
+type User implements NamedEntity & Node {
   id: ID!
   age: Int
   name: String
 }
 
+type Administrator implements NamedEntity & Node {
+  id: ID!
+  name: String
+}
+
 type Query {
-  users: [NamedEntity]
+  profiles: [NamedEntity]
 }
