@@ -1,0 +1,19 @@
+{
+  "name": "graphql-examples",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VanMess/graphql-examples.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VanMess/graphql-examples/issues"
+  },
+  "homepage": "https://github.com/VanMess/graphql-examples#readme",
+  "dependencies": {
+    "graphql": "^14.0.2"
+  }
+}
