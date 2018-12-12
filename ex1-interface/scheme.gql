@@ -1,0 +1,16 @@
+"""
+命名对象
+"""
+interface NamedEntity {
+  name: String
+}
+
+type User implements NamedEntity {
+  id: ID!
+  age: Int
+  name: String
+}
+
+type Query {
+  users: [NamedEntity]
+}
