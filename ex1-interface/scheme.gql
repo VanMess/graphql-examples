@@ -1,0 +1,25 @@
+"""
+命名对象
+"""
+interface NamedEntity {
+  name: String
+}
+
+interface Node {
+  id: ID!
+}
+
+type User implements NamedEntity & Node {
+  id: ID!
+  age: Int
+  name: String
+}
+
+type Administrator implements NamedEntity & Node {
+  id: ID!
+  name: String
+}
+
+type Query {
+  profiles: [NamedEntity]
+}
