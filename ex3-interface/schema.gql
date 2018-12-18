@@ -2,24 +2,24 @@
 命名对象
 """
 interface NamedEntity {
-  name: String
+	name: String
 }
 
 interface Node {
-  id: ID!
+	id: ID!
 }
 
 type User implements NamedEntity & Node {
-  id: ID!
-  age: Int
-  name: String
+	id: ID!
+	age: Int
+	name: String
 }
 
 type Administrator implements NamedEntity & Node {
-  id: ID!
-  name: String
+	id: ID!
+	name: String
 }
 
 type Query {
-  profiles: [NamedEntity]
+	profiles: [NamedEntity]
 }
