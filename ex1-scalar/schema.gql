@@ -1,11 +1,14 @@
 scalar Datetime
 
+scalar Address
+
 type User {
 	id: ID!
 	name: String
 	createDatetime: Datetime
+	bornOrigin: Address
 }
 
 type Query {
-	users: [User]
+	users(before: Datetime): [User]
 }
