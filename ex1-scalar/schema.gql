@@ -1,11 +1,11 @@
-interface Node {
-  id: ID!
-}
+scalar Datetime
 
-type User implements Node {
-  id: ID!
+type User {
+	id: ID!
+	name: String
+	createDatetime: Datetime
 }
 
 type Query {
-  users: [User]
+	users: [User]
 }
